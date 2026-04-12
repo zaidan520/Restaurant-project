@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Haqania Foods — Authentic Pakistani Cuisine</title>
+  <meta name="description" content="Experience bold Pakistani flavors at Haqania Foods. Authentic biryani, karahi, kebabs and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+
+  <!-- ─── Navbar ─────────────────────────────────────────────────────────── -->
+  <nav class="navbar">
+    <a href="#" class="nav-logo"><span>Haqania</span> <em>Foods</em></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="order.html" class="btn-nav">Order Now</a></li>
+      <li><a href="admin-login.html">Admin</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ─── Hero ───────────────────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-tag">Authentic Pakistani Cuisine</span>
+      <h1>Bold Flavors.<br /><em>Rich Tradition.</em></h1>
+      <p>Elevating Pakistani street food to a premium experience. Taste the passion in every single bite.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="order.html" class="btn btn-primary">Order Now</a>
+        <a href="menu.html" class="btn btn-outline">View Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Stats ──────────────────────────────────────────────────────────── -->
+  <div class="stats-bar">
+    <div class="stat fade-in">
+      <div class="stat-num">20+</div>
+      <div class="stat-label">Menu Items</div>
+    </div>
+    <div class="stat fade-in">
+      <div class="stat-num">5000+</div>
+      <div class="stat-label">Happy Customers</div>
+    </div>
+    <div class="stat fade-in">
+      <div class="stat-num">10+</div>
+      <div class="stat-label">Years of Tradition</div>
+    </div>
+    <div class="stat fade-in">
+      <div class="stat-num">4.9★</div>
+      <div class="stat-label">Average Rating</div>
+    </div>
+  </div>
+
+  <!-- ─── Featured Menu ──────────────────────────────────────────────────── -->
+  <section id="featured">
+    <div class="section-header fade-in">
+      <div class="section-tag">A Glimpse of Greatness</div>
+      <h2>Our <span>Signatures</span></h2>
+    </div>
+    <div class="menu-grid" id="featuredGrid">
+      <!-- skeleton placeholders -->
+      <div class="skeleton-card"><div class="skeleton skeleton-img"></div><div class="skeleton skeleton-line w80"></div><div class="skeleton skeleton-line w50"></div><div class="skeleton skeleton-line w30"></div></div>
+      <div class="skeleton-card"><div class="skeleton skeleton-img"></div><div class="skeleton skeleton-line w80"></div><div class="skeleton skeleton-line w50"></div><div class="skeleton skeleton-line w30"></div></div>
+      <div class="skeleton-card"><div class="skeleton skeleton-img"></div><div class="skeleton skeleton-line w80"></div><div class="skeleton skeleton-line w50"></div><div class="skeleton skeleton-line w30"></div></div>
+      <div class="skeleton-card"><div class="skeleton skeleton-img"></div><div class="skeleton skeleton-line w80"></div><div class="skeleton skeleton-line w50"></div><div class="skeleton skeleton-line w30"></div></div>
+      <div class="skeleton-card"><div class="skeleton skeleton-img"></div><div class="skeleton skeleton-line w80"></div><div class="skeleton skeleton-line w50"></div><div class="skeleton skeleton-line w30"></div></div>
+      <div class="skeleton-card"><div class="skeleton skeleton-img"></div><div class="skeleton skeleton-line w80"></div><div class="skeleton skeleton-line w50"></div><div class="skeleton skeleton-line w30"></div></div>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem">
+      <a href="menu.html" class="btn btn-outline fade-in">View Full Menu &rarr;</a>
+    </div>
+  </section>
+
+  <!-- ─── About ──────────────────────────────────────────────────────────── -->
+  <section style="background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+    <div class="about-grid">
+      <div class="about-text fade-in">
+        <h2>The <span>Haqania</span> Experience</h2>
+        <p>Founded on the bustling streets of Lahore and brought to your plate with uncompromising quality. We believe great food is an experience that awakens the senses. Every dish is crafted with fresh ingredients, time-honored recipes, and a whole lot of soul.</p>
+        <p>From our slow-cooked Nihari to our sizzling Karahi — each dish tells a story of generations of culinary mastery.</p>
+        <div class="about-details">
+          <div class="about-detail"><span class="icon">📍</span><span>123 Spice Avenue, Flavor Town, CA 94102</span></div>
+          <div class="about-detail"><span class="icon">🕐</span><span>Mon – Sun: 11:00 AM – 11:00 PM</span></div>
+          <div class="about-detail"><span class="icon">📞</span><span>(555) 123-4567</span></div>
+          <div class="about-detail"><span class="icon">📧</span><span>hello@haqaniafoods.com</span></div>
+        </div>
+      </div>
+      <div class="map-wrapper fade-in">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434509374!2d-122.41941548468202!3d37.77492997975903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c6c8f4459%3A0xb10ed6d9b5050f14!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1659124403061!5m2!1sen!2sus"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Footer ─────────────────────────────────────────────────────────── -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3><span>Haqania</span> Foods</h3>
+        <p>Authentic Pakistani cuisine crafted with passion and tradition. Street food elevated to a premium dining experience.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="menu.html">Full Menu</a></li>
+          <li><a href="order.html">Place Order</a></li>
+          <li><a href="admin-login.html">Admin Panel</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Hours</h4>
+        <ul>
+          <li><a>Mon – Fri: 11am – 10pm</a></li>
+          <li><a>Sat – Sun: 11am – 11pm</a></li>
+          <li><a>Public Holidays: 12pm – 9pm</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2025 Haqania Foods. All rights reserved.</div>
+  </footer>
+
+  <script src="./js/menu-data.js"></script>
+  <script src="./js/home.js"></script>
+  <script src="./js/main.js"></script>
+  
+</body>
+</html>

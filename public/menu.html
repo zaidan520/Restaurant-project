@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu — Haqania Foods</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo"><span>Haqania</span> <em>Foods</em></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html" class="active">Menu</a></li>
+      <li><a href="order.html" class="btn-nav">Order Now</a></li>
+      <li><a href="admin-login.html">Admin</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="page-header">
+    <h1>Our <span>Menu</span></h1>
+    <p>Authentic Flavors, Boldly Crafted</p>
+  </div>
+
+  <section>
+    <div id="menuContent" style="max-width:1200px;margin:0 auto">
+      <!-- skeleton -->
+      <div class="menu-grid" id="skeletonGrid">
+        <div class="skeleton-card"><div class="skeleton skeleton-img"></div><div class="skeleton skeleton-line w80" style="margin-top:1rem"></div><div class="skeleton skeleton-line w50"></div></div>
+        <div class="skeleton-card"><div class="skeleton skeleton-img"></div><div class="skeleton skeleton-line w80" style="margin-top:1rem"></div><div class="skeleton skeleton-line w50"></div></div>
+        <div class="skeleton-card"><div class="skeleton skeleton-img"></div><div class="skeleton skeleton-line w80" style="margin-top:1rem"></div><div class="skeleton skeleton-line w50"></div></div>
+        <div class="skeleton-card"><div class="skeleton skeleton-img"></div><div class="skeleton skeleton-line w80" style="margin-top:1rem"></div><div class="skeleton skeleton-line w50"></div></div>
+        <div class="skeleton-card"><div class="skeleton skeleton-img"></div><div class="skeleton skeleton-line w80" style="margin-top:1rem"></div><div class="skeleton skeleton-line w50"></div></div>
+        <div class="skeleton-card"><div class="skeleton skeleton-img"></div><div class="skeleton skeleton-line w80" style="margin-top:1rem"></div><div class="skeleton skeleton-line w50"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-bottom">&copy; 2025 Haqania Foods. All rights reserved.</div>
+  </footer>
+   <script src="./js/menu-data.js"></script>
+  <script src="./js/menu.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>

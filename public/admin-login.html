@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Login — Haqania Foods</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <style>
+    .login-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg);
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .login-page::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('/images/hero-bg.png') center/cover no-repeat;
+      opacity: 0.07;
+    }
+    .login-box {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 420px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 2.5rem;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    }
+    .login-logo {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .login-logo h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+    }
+    .login-logo h1 span { color: var(--primary); }
+    .login-logo h1 em   { color: var(--secondary); font-style: normal; }
+    .login-logo p {
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 0.4rem;
+    }
+    .login-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin-bottom: 1.8rem;
+    }
+    .input-icon-wrap {
+      position: relative;
+    }
+    .input-icon-wrap .icon {
+      position: absolute;
+      left: 0.9rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1rem;
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+    .input-icon-wrap input {
+      padding-left: 2.6rem !important;
+    }
+    .login-btn {
+      width: 100%;
+      justify-content: center;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+    }
+    .login-back {
+      display: block;
+      text-align: center;
+      margin-top: 1.2rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+    .login-back:hover { color: var(--secondary); }
+    .shake {
+      animation: shake 0.4s ease;
+    }
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20%       { transform: translateX(-8px); }
+      40%       { transform: translateX(8px); }
+      60%       { transform: translateX(-5px); }
+      80%       { transform: translateX(5px); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-page">
+    <div class="login-box">
+      <div class="login-logo">
+        <h1><span>Haqania</span> <em>Foods</em></h1>
+        <p>Admin Portal</p>
+      </div>
+      <hr class="login-divider" />
+
+      <div class="alert alert-error" id="errorAlert"></div>
+
+      <form id="loginForm" novalidate>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <div class="input-icon-wrap">
+            <span class="icon">👤</span>
+            <input type="text" id="username" name="username" placeholder="admin" autocomplete="username" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="input-icon-wrap">
+            <span class="icon">🔒</span>
+            <input type="password" id="password" name="password" placeholder="••••••••" autocomplete="current-password" required />
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary login-btn" id="loginBtn">
+          Sign In to Admin Panel
+        </button>
+      </form>
+
+      <a href="/" class="login-back">&larr; Back to Website</a>
+    </div>
+  </div>
+
+  <script src="/js/admin-login.js"></script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Place Order — Haqania Foods</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <style>
+    .cart-items {
+      margin-top: 2rem;
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+    }
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem;
+      background: var(--bg);
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+    }
+    .cart-item-info {
+      flex: 1;
+    }
+    .cart-item-name {
+      font-weight: 600;
+    }
+    .cart-item-price {
+      color: var(--primary);
+      font-size: 0.85rem;
+    }
+    .cart-item-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .cart-item-controls button {
+      background: var(--border);
+      border: none;
+      color: var(--text);
+      width: 28px;
+      height: 28px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .cart-item-controls button:hover {
+      background: var(--primary);
+      color: #000;
+    }
+    .cart-item-quantity {
+      min-width: 30px;
+      text-align: center;
+      font-weight: 600;
+    }
+    .cart-item-remove {
+      background: var(--error);
+      color: white;
+      border: none;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-left: 0.5rem;
+    }
+    .cart-summary {
+      margin-top: 1rem;
+      padding: 1rem;
+      background: var(--bg-card);
+      border-radius: 8px;
+      text-align: right;
+    }
+    .cart-total {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .add-more-btn {
+      background: none;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    .empty-cart {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="/" class="nav-logo"><span>Haqania</span> <em>Foods</em></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="order.html" class="btn-nav active">Order Now</a></li>
+      <li><a href="admin-login.html">Admin</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="page-header">
+    <h1>Place <span>Order</span></h1>
+    <p>Select multiple items — we'll prepare everything fresh!</p>
+  </div>
+
+  <div class="form-container">
+    <div class="form-card">
+      <div class="alert alert-success" id="successAlert">
+        Order placed successfully! We will contact you shortly to confirm your order.
+      </div>
+      <div class="alert alert-error" id="errorAlert">
+        Something went wrong. Please try again.
+      </div>
+
+      <!-- Item Selection Section -->
+      <div class="form-group">
+        <label for="menuItemId">Add Items to Cart</label>
+        <div style="display: flex; gap: 0.5rem;">
+          <select id="menuItemId" style="flex: 1;">
+            <option value="">Loading menu...</option>
+          </select>
+          <input type="number" id="quantity" value="1" min="1" style="width: 80px; text-align: center;">
+          <button type="button" id="addToCartBtn" class="btn-primary" style="padding: 0.75rem 1rem;">+ Add</button>
+        </div>
+      </div>
+
+      <!-- Shopping Cart -->
+      <div class="cart-items">
+        <h3>Shopping Cart</h3>
+        <div id="cartContainer">
+          <div class="empty-cart">Your cart is empty. Add some delicious items!</div>
+        </div>
+        <div id="cartSummary" style="display: none;">
+          <div class="cart-summary">
+            <div>Subtotal: <span id="cartSubtotal">$0.00</span></div>
+            <div style="margin-top: 0.5rem;">Total: <span class="cart-total" id="cartTotal">$0.00</span></div>
+          </div>
+        </div>
+      </div>
+
+      <hr style="border-color: var(--border); margin: 1.5rem 0;">
+
+      <!-- Customer Information Form -->
+      <form id="orderForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="customerName">Full Name *</label>
+            <input type="text" id="customerName" name="customerName" placeholder="John Doe" required />
+            <span class="field-error" id="nameError" style="color:#ff6b4a;font-size:0.78rem;display:none"></span>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" required />
+            <span class="field-error" id="phoneError" style="color:#ff6b4a;font-size:0.78rem;display:none"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="address">Delivery Address *</label>
+          <input type="text" id="address" name="address" placeholder="123 Spice Ave, Apt 4, City, State" required />
+          <span class="field-error" id="addressError" style="color:#ff6b4a;font-size:0.78rem;display:none"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="notes">Special Instructions</label>
+          <textarea id="notes" name="notes" placeholder="Extra spicy, no onions, etc."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary form-submit" id="submitBtn">
+          Place Order (0 items)
+        </button>
+      </form>
+    </div>
+
+    <div style="text-align:center;margin-top:1.5rem">
+      <a href="menu.html" style="color:var(--text-muted);font-size:0.85rem">&larr; Back to Menu</a>
+    </div>
+  </div>
+
+  <footer style="margin-top:4rem">
+    <div class="footer-bottom">&copy; 2025 Haqania Foods. All rights reserved.</div>
+  </footer>
+
+  <script src="/js/menu-data.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/order.js"></script>
+</body>
+</html>
